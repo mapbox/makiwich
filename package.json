@@ -1,0 +1,25 @@
+{
+  "name": "makiwich",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "d3-queue": "^3.0.3",
+    "maki": "2.1.0",
+    "mapnik": "^3.5.14",
+    "tinycolor2": "^1.4.1",
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "eslint": "^3.15.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.2",
+    "eslint-plugin-standard": "^2.0.1",
+    "tape": "^4.6.3"
+  }
+}

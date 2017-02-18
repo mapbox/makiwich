@@ -5,6 +5,7 @@ var util = require('./util');
 
 // Don't tolerate any difference in text fixtures compared to images rendered during tests
 var maxDifference = 0;
+var abc = 'abcdefghijklmnopqrstuvwxyz';
 
 maki.layouts.all.all.forEach((name) => {
     var key = `${name}-s-@2x.png`;
@@ -30,7 +31,22 @@ maki.layouts.all.all.forEach((name) => {
             symbol: name,
             size: 'l'
         }, (err, svg) => {
-            t.ifError(err, 'No error');
+            t.ifError(err);
+            util.writeToDisk(key, svg);
+            var difference = util.compare(key);
+            t.ok(difference <= maxDifference, `Pixel difference is ${difference}`);
+            t.end();
+        });
+    });
+});
+abc.split('').forEach((letter) => {
+    var key = `${letter}-ddd.png`;
+    tape(key, (t) => {
+        makiwich({
+            symbol: letter,
+            tint: '#ddd'
+        }, (err, svg) => {
+            t.ifError(err);
             util.writeToDisk(key, svg);
             var difference = util.compare(key);
             t.ok(difference <= maxDifference, `Pixel difference is ${difference}`);
@@ -42,7 +58,7 @@ maki.layouts.all.all.forEach((name) => {
 tape('default marker', (t) => {
     var key = 'default.png';
     makiwich({}, (err, svg) => {
-        t.ifError(err, 'No error');
+        t.ifError(err);
         util.writeToDisk(key, svg);
         var difference = util.compare(key);
         t.ok(difference <= maxDifference, `Pixel difference is ${difference}`);
@@ -64,7 +80,17 @@ tape('invalid symbol', (t) => {
     makiwich({
         symbol: 'foobar'
     }, (err, svg) => {
-        t.equal(err, 'Symbol foobar not found');
+        t.equal(err, 'Symbol foobar not valid');
+        t.equal(svg, undefined);
+        t.end();
+    });
+});
+
+tape('invalid symbol', (t) => {
+    makiwich({
+        symbol: '333'
+    }, (err, svg) => {
+        t.equal(err, 'Symbol 333 not valid');
         t.equal(svg, undefined);
         t.end();
     });

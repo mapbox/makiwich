@@ -16,5 +16,7 @@
         <g id="maki" transform="translate(6.000000, 6.000000)" fill-rule="nonzero" fill="#000000">
             <g id="Layer_1"></g>
         </g>
+        <text id="text" font-family="OpenSansEmoji-Regular, OpenSansEmoji" font-size="15" font-weight="normal" fill="#515151">
+        </text>
     </g>
 </svg>

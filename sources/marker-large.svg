@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="27px" height="37px" viewBox="0 0 27 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-    <title>Untitled 2</title>
-    <desc>Created with Sketch.</desc>
     <defs>
         <radialGradient cx="49.7317091%" cy="47.3094437%" fx="49.7317091%" fy="47.3094437%" r="50%" id="radialGradient-1">
             <stop stop-color="#000000" stop-opacity="0.4" offset="0%"></stop>
@@ -17,8 +14,7 @@
             <path d="M13.5,3e-05 C6.04414,3e-05 -9.9999876e-06,6.04413 0,13.50003 C0,19.631179 4.091128,24.799408 9.689453,26.445342 C11.362523,29.436842 13.517578,32.00003 13.517578,32.00003 C13.517578,32.00003 15.65778,29.435851 17.320312,26.443389 C17.320588,26.442893 17.320037,26.441889 17.320312,26.441389 C22.913519,24.79229 27,19.627539 27,13.50003 C27.00001,6.04413 20.95586,3e-05 13.5,3e-05 Z M13.5,2.00003 C19.8513,2.00003 25.00001,7.14873 25,13.50003 C25,19.85133 19.85129,25.00003 13.5,25.00003 C7.14871,25.00003 2,19.85133 2,13.50003 C1.99999,7.14873 7.1487,2.00003 13.5,2.00003 L13.5,2.00003 Z" id="path9066" fill="#000000" opacity="0.1"></path>
         </g>
         <g id="maki" transform="translate(6.000000, 6.000000)" fill-rule="nonzero" fill="#000000">
-            <g id="Layer_1">
-            </g>
+            <g id="Layer_1"></g>
         </g>
     </g>
 </svg>

@@ -39,6 +39,7 @@ maki.layouts.all.all.forEach((name) => {
         });
     });
 });
+
 abc.split('').forEach((letter) => {
     var key = `${letter}-ddd.png`;
     tape(key, (t) => {
@@ -53,6 +54,22 @@ abc.split('').forEach((letter) => {
             t.end();
         });
     });
+});
+
+tape('test numbers', (t) => {
+    for (var i = 0; i < 99; i++) {
+        var key = `${i}-ff0000.png`;
+        makiwich({
+            symbol: i + '',
+            tint: '#ff0000'
+        }, (err, svg) => {
+            t.ifError(err);
+            util.writeToDisk(key, svg);
+            var difference = util.compare(key);
+            t.ok(difference <= maxDifference, `Pixel difference for number ${i} is: ${difference}`);
+        });
+    }
+    t.end();
 });
 
 tape('default marker', (t) => {

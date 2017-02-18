@@ -13,7 +13,6 @@ function generateMarker (options, callback) {
 
     if (options.symbol) {
         var symbolSize = `${options.symbol}-${size === 's' ? '11' : '15'}`;
-
         if (assets.parsedSVGs[symbolSize]) {
             // Add the symbol to the base marker
             backgroundMarkerSize.svg.g[0].g[1].g[0] = assets.parsedSVGs[symbolSize].svg;

@@ -59,3 +59,13 @@ tape('invalid size', (t) => {
         t.end();
     });
 });
+
+tape('invalid symbol', (t) => {
+    makiwich({
+        symbol: 'foobar'
+    }, (err, svg) => {
+        t.equal(err, 'Symbol foobar not found');
+        t.equal(svg, undefined);
+        t.end();
+    });
+});

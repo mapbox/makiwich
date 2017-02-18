@@ -62,7 +62,7 @@ function generateMarker (options, callback) {
     var backgroundMarkerSize = size === 's' ? Object.assign(smallParsedMarker) : Object.assign(largeParsedMarker);
     if (options.symbol) {
         var symbolSize = `${options.symbol}-${size === 's' ? '11' : '15'}`;
-        if (!parsedSVGs[symbolSize]) return callback(`symbol ${options.symbol} not found`);
+        if (!parsedSVGs[symbolSize]) return callback(`Symbol ${options.symbol} not found`);
 
         // Add the symbol to the base marker
         backgroundMarkerSize.svg.g[0].g[1].g[0] = parsedSVGs[symbolSize].svg;

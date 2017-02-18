@@ -1,7 +1,7 @@
 {
   "name": "makiwich",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Sandwich together Maki icons with a map marker",
   "main": "index.js",
   "scripts": {
     "test": "tape test/test.js"
@@ -20,6 +20,7 @@
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.2",
     "eslint-plugin-standard": "^2.0.1",
+    "pixelmatch": "^4.0.0",
     "tape": "^4.6.3"
   }
 }

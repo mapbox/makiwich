@@ -1,6 +1,8 @@
 # Makiwich
 
-Composites [Maki](https://mapbox.com/maki) icons with a map marker an returns an SVG.
+Composites [Maki](https://mapbox.com/maki) icons with a map marker and returns an SVG.
+
+<img src='https://cldup.com/Kx4BlRdfDs.png' height='34px' />
 
 ## Install
 

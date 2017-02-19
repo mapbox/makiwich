@@ -41,7 +41,7 @@ maki.layouts.all.all.forEach((name) => {
 });
 
 abc.split('').forEach((letter) => {
-    var key = `${letter}-ddd.png`;
+    var key = `${letter}-ddd@2x.png`;
     tape(key, (t) => {
         makiwich({
             symbol: letter,
@@ -58,7 +58,7 @@ abc.split('').forEach((letter) => {
 
 tape('test numbers', (t) => {
     for (var i = 0; i < 99; i++) {
-        var key = `${i}-ff0000.png`;
+        var key = `${i}-ff0000@2x.png`;
         makiwich({
             symbol: i + '',
             tint: '#ff0000'
@@ -73,7 +73,7 @@ tape('test numbers', (t) => {
 });
 
 tape('default marker', (t) => {
-    var key = 'default.png';
+    var key = 'default@2x.png';
     makiwich({}, (err, svg) => {
         t.ifError(err);
         util.writeToDisk(key, svg);
@@ -108,6 +108,16 @@ tape('invalid symbol', (t) => {
         symbol: '333'
     }, (err, svg) => {
         t.equal(err, 'Symbol 333 not valid');
+        t.equal(svg, undefined);
+        t.end();
+    });
+});
+
+tape('invalid tint', (t) => {
+    makiwich({
+        tint: '/'
+    }, (err, svg) => {
+        t.equal(err, 'Invalid color');
         t.equal(svg, undefined);
         t.end();
     });

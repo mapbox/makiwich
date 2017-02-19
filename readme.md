@@ -2,6 +2,8 @@
 
 Composites [Maki](https://mapbox.com/maki) icons with a map marker and returns an SVG.
 
+![](https://api.travis-ci.org/mapbox/makiwich.svg?branch=master)
+
 <img src='https://cldup.com/Kx4BlRdfDs.png' height='34px' />
 
 ## Install

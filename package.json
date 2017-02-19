@@ -11,7 +11,6 @@
   "dependencies": {
     "d3-queue": "^3.0.3",
     "maki": "2.1.0",
-    "mapnik": "^3.5.14",
     "text-to-svg": "^3.1.0",
     "tinycolor2": "^1.4.1",
     "xml2js": "^0.4.17"
@@ -21,6 +20,7 @@
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.2",
     "eslint-plugin-standard": "^2.0.1",
+    "mapnik": "^3.5.14",
     "pixelmatch": "^4.0.0",
     "tape": "^4.6.3"
   }

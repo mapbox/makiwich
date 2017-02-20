@@ -56,6 +56,23 @@ abc.split('').forEach((letter) => {
     });
 });
 
+abc.split('').forEach((letter) => {
+    var key = `${letter}-ddd@2x.png`;
+    tape(key, (t) => {
+        makiwich({
+            symbol: letter,
+            tint: '#ddd',
+            size: 's'
+        }, (err, svg) => {
+            t.ifError(err);
+            util.writeToDisk(key, svg);
+            var difference = util.compare(key);
+            t.ok(difference <= maxDifference, `Pixel difference is ${difference}`);
+            t.end();
+        });
+    });
+});
+
 tape('test numbers', (t) => {
     for (var i = 0; i < 99; i++) {
         var key = `${i}-ff0000@2x.png`;
@@ -67,6 +84,23 @@ tape('test numbers', (t) => {
             util.writeToDisk(key, svg);
             var difference = util.compare(key);
             t.ok(difference <= maxDifference, `Pixel difference for number ${i} is: ${difference}`);
+        });
+    }
+    t.end();
+});
+
+tape('test numbers small', (t) => {
+    for (var i = 0; i < 99; i++) {
+        var key = `${i}-41d691-s@2x.png`;
+        makiwich({
+            symbol: i + '',
+            tint: '#41d691',
+            size: 's'
+        }, (err, svg) => {
+            t.ifError(err);
+            util.writeToDisk(key, svg);
+            // var difference = util.compare(key);
+            // t.ok(difference <= maxDifference, `Pixel difference for number ${i} is: ${difference}`);
         });
     }
     t.end();

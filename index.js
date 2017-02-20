@@ -21,7 +21,11 @@ function generateMarker (options, callback) {
 
         // If there is only 1 character, shift it to the center
         if (options.symbol.length === 1) {
-            backgroundMarkerSize.svg.g[0].g[1].$.transform = 'translate(10.000000, 7.000000)';
+            if (size === 's') {
+                backgroundMarkerSize.svg.g[0].g[1].$.transform = 'translate(9, 6)';
+            } else {
+                backgroundMarkerSize.svg.g[0].g[1].$.transform = 'translate(10, 7)';
+            }
         }
     }
 
@@ -36,10 +40,6 @@ function generateMarker (options, callback) {
 
     // If the background color is light, apply a light tint to the icon or text to make it stand out more
     backgroundMarkerSize.svg.g[0].g[1].g[0].$.fill = tintIsLightInColor ? constants.DEFAULT_BLACK : constants.DEFAULT_WHITE;
-
-    // There is a border around the marker
-    // This attempts to make it more pronounced againt the tint
-    backgroundMarkerSize.svg.g[0].g[0].path[1].$.fill = tintIsLightInColor ? constants.DEFAULT_BLACK : constants.DEFAULT_WHITE;
 
     var xml = builder.buildObject(backgroundMarkerSize);
 

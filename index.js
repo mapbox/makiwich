@@ -28,7 +28,7 @@ function generateMarker (options, callback) {
             if (size === 's') {
                 backgroundMarkerSize.svg.g[0].g[1].$.transform = 'translate(9, 6)';
             } else {
-                backgroundMarkerSize.svg.g[0].g[1].$.transform = 'translate(10, 7)';
+                backgroundMarkerSize.svg.g[0].g[1].$.transform = 'translate(10, 5)';
             }
         }
     }

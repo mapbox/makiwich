@@ -3,13 +3,14 @@ var builder = new xml2js.Builder();
 var tinycolor = require('tinycolor2');
 var constants = require('./lib/constants');
 var assets = require('./lib/loadAssets');
+var errcode = require('err-code');
 var allColors = [];
 for (var i in tinycolor.names) {
     allColors.push(i);
 }
 
 function generateMarker (options, callback) {
-    if (options.size && (options.size !== 's' && options.size !== 'l')) return callback('Invlaid size');
+    if (options.size && (options.size !== 's' && options.size !== 'l')) return callback(errcode('Invlaid size', 'EINVALID'));
     var size = options.size ? options.size : 'l';
     var b = size === 's' ? assets.smallParsedMarker : assets.largeParsedMarker;
 
@@ -18,7 +19,7 @@ function generateMarker (options, callback) {
 
     if (options.symbol) {
         var symbolSize = `${options.symbol}-${size === 's' ? '11' : '15'}`;
-        if (!assets.parsedSVGs[symbolSize] && !/^[1-9a-z]\d{0,1}$/.test(options.symbol)) return callback(`Symbol ${options.symbol} not valid`);
+        if (!assets.parsedSVGs[symbolSize] && !/^[1-9a-z]\d{0,1}$/.test(options.symbol)) return callback(errcode(`Symbol ${options.symbol} not valid`, 'EINVALID'));
 
         // Add the symbol to the base marker
         backgroundMarkerSize.svg.g[0].g[1].g[0] = assets.parsedSVGs[symbolSize].svg;
@@ -36,7 +37,7 @@ function generateMarker (options, callback) {
     var tint = options.tint ? options.tint : constants.DEFAULT_BLACK;
     var tinyTint = tinycolor(tint);
 
-    if (!tinyTint.isValid()) return callback('Invalid color');
+    if (!tinyTint.isValid()) return callback(errcode('Invalid color', 'EINVALID'));
     var tintIsLightInColor = tinyTint.isLight();
 
     var markerPaths = backgroundMarkerSize.svg.g[0].g[0].path;

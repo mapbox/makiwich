@@ -25,7 +25,7 @@ function generateMarker (options, callback) {
         }
     }
 
-    var tint = options.tint ? options.tint : constants.DEFAULT_DARK_COLOR;
+    var tint = options.tint ? options.tint : constants.DEFAULT_BLACK;
     var tinyTint = tinycolor(tint);
 
     if (!tinyTint.isValid()) return callback('Invalid color');
@@ -35,7 +35,7 @@ function generateMarker (options, callback) {
     backgroundMarkerSize.svg.g[0].g[0].path[0].$.fill = tint;
 
     // If the background color is light, apply a light tint to the icon or text to make it stand out more
-    backgroundMarkerSize.svg.g[0].g[1].g[0].$.fill = tintIsLightInColor ? constants.DEFAULT_DARK_COLOR : constants.DEFAULT_LIGHT_COLOR;
+    backgroundMarkerSize.svg.g[0].g[1].g[0].$.fill = tintIsLightInColor ? constants.DEFAULT_BLACK : constants.DEFAULT_WHITE;
 
     // There is a border around the marker
     // This attempts to make it more pronounced againt the tint

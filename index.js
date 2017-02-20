@@ -39,7 +39,12 @@ function generateMarker (options, callback) {
     backgroundMarkerSize.svg.g[0].g[0].path[0].$.fill = tint;
 
     // If the background color is light, apply a light tint to the icon or text to make it stand out more
-    backgroundMarkerSize.svg.g[0].g[1].g[0].$.fill = tintIsLightInColor ? constants.DEFAULT_BLACK : constants.DEFAULT_WHITE;
+    // Some Maki icons have different SVG makeups. This attempts to apply the tint to the correct path
+    if (backgroundMarkerSize.svg.g[0].g[1].g[0].path) {
+        backgroundMarkerSize.svg.g[0].g[1].g[0].path[0].$.style = tintIsLightInColor ? `fill:${constants.DEFAULT_BLACK}` : `fill:${constants.DEFAULT_WHITE}`;
+    } else {
+        backgroundMarkerSize.svg.g[0].g[1].g[0].$.fill = tintIsLightInColor ? constants.DEFAULT_BLACK : constants.DEFAULT_WHITE;
+    }
 
     var xml = builder.buildObject(backgroundMarkerSize);
 

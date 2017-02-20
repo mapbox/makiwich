@@ -41,11 +41,11 @@ maki.layouts.all.all.forEach((name) => {
 });
 
 abc.split('').forEach((letter) => {
-    var key = `${letter}-ddd@2x.png`;
+    var key = `${letter}-323de4@2x.png`;
     tape(key, (t) => {
         makiwich({
             symbol: letter,
-            tint: '#ddd'
+            tint: '#323de4'
         }, (err, svg) => {
             t.ifError(err);
             util.writeToDisk(key, svg);
@@ -57,7 +57,7 @@ abc.split('').forEach((letter) => {
 });
 
 abc.split('').forEach((letter) => {
-    var key = `${letter}-ddd@2x.png`;
+    var key = `${letter}-ddd-s@2x.png`;
     tape(key, (t) => {
         makiwich({
             symbol: letter,
@@ -99,8 +99,8 @@ tape('test numbers small', (t) => {
         }, (err, svg) => {
             t.ifError(err);
             util.writeToDisk(key, svg);
-            // var difference = util.compare(key);
-            // t.ok(difference <= maxDifference, `Pixel difference for number ${i} is: ${difference}`);
+            var difference = util.compare(key);
+            t.ok(difference <= maxDifference, `Pixel difference for ${key} is: ${difference}`);
         });
     }
     t.end();

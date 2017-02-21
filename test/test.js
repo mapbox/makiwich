@@ -8,7 +8,7 @@ var maxDifference = 0;
 var abc = 'abcdefghijklmnopqrstuvwxyz';
 
 maki.layouts.all.all.forEach((name) => {
-    var key = `${name}-s-@2x.png`;
+    var key = `${name}-s-2x.png`;
     tape(key, (t) => {
         makiwich({
             symbol: name,
@@ -24,10 +24,10 @@ maki.layouts.all.all.forEach((name) => {
 });
 
 maki.layouts.all.all.forEach((name) => {
-    var key = `${name}-l-@2x-#454545.png`;
+    var key = `${name}-l-2x-454545.png`;
     tape(key, (t) => {
         makiwich({
-            tint: '#454545',
+            tint: '454545',
             symbol: name,
             size: 'l'
         }, (err, svg) => {
@@ -41,11 +41,11 @@ maki.layouts.all.all.forEach((name) => {
 });
 
 abc.split('').forEach((letter) => {
-    var key = `${letter}-323de4@2x.png`;
+    var key = `${letter}-323de42x.png`;
     tape(key, (t) => {
         makiwich({
             symbol: letter,
-            tint: '#323de4'
+            tint: '323de4'
         }, (err, svg) => {
             t.ifError(err);
             util.writeToDisk(key, svg);
@@ -57,11 +57,11 @@ abc.split('').forEach((letter) => {
 });
 
 abc.split('').forEach((letter) => {
-    var key = `${letter}-ddd-s@2x.png`;
+    var key = `${letter}-ddd-s2x.png`;
     tape(key, (t) => {
         makiwich({
             symbol: letter,
-            tint: '#ddd',
+            tint: 'ddd',
             size: 's'
         }, (err, svg) => {
             t.ifError(err);
@@ -75,10 +75,10 @@ abc.split('').forEach((letter) => {
 
 tape('test numbers', (t) => {
     for (var i = 0; i < 99; i++) {
-        var key = `${i}-ff0000@2x.png`;
+        var key = `${i}-ff00002x.png`;
         makiwich({
             symbol: i + '',
-            tint: '#ff0000'
+            tint: 'ff0000'
         }, (err, svg) => {
             t.ifError(err);
             util.writeToDisk(key, svg);
@@ -91,10 +91,10 @@ tape('test numbers', (t) => {
 
 tape('test numbers small', (t) => {
     for (var i = 0; i < 99; i++) {
-        var key = `${i}-41d691-s@2x.png`;
+        var key = `${i}-41d691-s2x.png`;
         makiwich({
             symbol: i + '',
-            tint: '#41d691',
+            tint: '41d691',
             size: 's'
         }, (err, svg) => {
             t.ifError(err);
@@ -107,7 +107,7 @@ tape('test numbers small', (t) => {
 });
 
 tape('default marker', (t) => {
-    var key = 'default@2x.png';
+    var key = 'default2x.png';
     makiwich({}, (err, svg) => {
         t.ifError(err);
         util.writeToDisk(key, svg);

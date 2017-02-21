@@ -121,7 +121,7 @@ tape('invalid size', (t) => {
     makiwich({
         size: 'foo'
     }, (err, svg) => {
-        t.equal(err, 'Invlaid size');
+        t.equal(err.message, 'Invlaid size');
         t.equal(svg, undefined);
         t.end();
     });
@@ -131,7 +131,7 @@ tape('invalid symbol', (t) => {
     makiwich({
         symbol: 'foobar'
     }, (err, svg) => {
-        t.equal(err, 'Symbol foobar not valid');
+        t.equal(err.message, 'Symbol foobar not valid');
         t.equal(svg, undefined);
         t.end();
     });
@@ -141,7 +141,7 @@ tape('invalid symbol', (t) => {
     makiwich({
         symbol: '333'
     }, (err, svg) => {
-        t.equal(err, 'Symbol 333 not valid');
+        t.equal(err.message, 'Symbol 333 not valid');
         t.equal(svg, undefined);
         t.end();
     });
@@ -151,7 +151,7 @@ tape('invalid tint', (t) => {
     makiwich({
         tint: '/'
     }, (err, svg) => {
-        t.equal(err, 'Invalid color');
+        t.equal(err.message, 'Invalid color');
         t.equal(svg, undefined);
         t.end();
     });

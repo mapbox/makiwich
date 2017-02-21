@@ -43,7 +43,6 @@ function generateMarker (options, callback) {
     var tintIsLightInColor = tinyTint.isLight();
 
     // Change the tint on the marker background
-    console.log(tint);
     basePaths[1].$.fill = tinyTint.toHexString();
 
     // Swap the border color if the tint is light and there is a symbol

@@ -1,10 +1,10 @@
-<svg width="23px" height="60px" viewBox="0 0 23 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="23px" height="35px" viewBox="0 0 23 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="marker-small" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Page-1" fill-rule="nonzero">
-            <g id="g14289" transform="translate(1.000000, 24.000000)" fill-rule="nonzero" fill="#000000">
+            <g id="g14289" transform="translate(1.000000, 24.000000)" fill="#000000">
                 <ellipse id="ellipse9048" opacity="0.04" cx="10.5" cy="5.500015" rx="10.5" ry="5.4999828"></ellipse>
                 <ellipse id="ellipse8490" opacity="0.04" cx="10.5" cy="5.500015" rx="10.5" ry="5.4999828"></ellipse>
                 <ellipse id="ellipse8492" opacity="0.04" cx="10.5" cy="5.500015" rx="9.5" ry="4.9999866"></ellipse>
@@ -15,18 +15,15 @@
                 <ellipse id="ellipse8502" opacity="0.04" cx="10.5" cy="5.500015" rx="4.5" ry="2.4999866"></ellipse>
             </g>
             <g id="background" fill="#3FB1CE">
-                <path d="M23,11.5 C23,16.248771 17.685185,22.611113 13,29.000002 C11.9,30.500002 11.1,30.500002 10,29.000002 C5.3148144,22.611113 0,16.374775 0,11.5 C0,5.1487249 5.1487254,0 11.5,0 C17.851275,0 23,5.1487249 23,11.5 Z" id="path12645" fill-rule="nonzero"></path>
+                <path d="M23,11.5 C23,16.248771 17.685185,22.611113 13,29.000002 C11.9,30.500002 11.1,30.500002 10,29.000002 C5.3148144,22.611113 0,16.374775 0,11.5 C0,5.1487249 5.1487254,0 11.5,0 C17.851275,0 23,5.1487249 23,11.5 Z" id="path12645"></path>
             </g>
-            <g id="border" fill="#000000" opacity="0.25">
-                <path d="M11.5,0 C5.1487254,0 0,5.1487249 0,11.5 C0,16.374775 5.3148144,22.611111 10,29 C11.1,30.5 11.9,30.5 13,29 C17.685185,22.611111 23,16.248771 23,11.5 C23,5.1487249 17.851275,0 11.5,0 Z M11.5,1 C17.310835,1 22,5.6891649 22,11.5 C22,13.50132 20.791544,16.173402 18.916016,19.095703 C17.040488,22.018004 14.548975,25.195999 12.193359,28.408203 C11.711725,29.064977 11.448684,29.125 11.5,29.125 C11.55132,29.125 11.288275,29.06498 10.806641,28.408203 C8.4491701,25.193471 5.9584671,22.045875 4.0839844,19.140625 C2.2095017,16.235375 1,13.573965 1,11.5 C1,5.689165 5.6891655,1 11.5,1 Z" id="path12645-8" fill-rule="nonzero" opacity="0.25"></path>
+            <g id="border" opacity="0.25" fill="#000000">
+                <path d="M11.5,0 C5.1487254,0 0,5.1487249 0,11.5 C0,16.374775 5.3148144,22.611111 10,29 C11.1,30.5 11.9,30.5 13,29 C17.685185,22.611111 23,16.248771 23,11.5 C23,5.1487249 17.851275,0 11.5,0 Z M11.5,1 C17.310835,1 22,5.6891649 22,11.5 C22,13.50132 20.791544,16.173402 18.916016,19.095703 C17.040488,22.018004 14.548975,25.195999 12.193359,28.408203 C11.711725,29.064977 11.448684,29.125 11.5,29.125 C11.55132,29.125 11.288275,29.06498 10.806641,28.408203 C8.4491701,25.193471 5.9584671,22.045875 4.0839844,19.140625 C2.2095017,16.235375 1,13.573965 1,11.5 C1,5.689165 5.6891655,1 11.5,1 Z" id="path12645-8"></path>
             </g>
             <g id="maki" transform="translate(6.000000, 7.000000)" fill="#FFFFFF"></g>
-            <g id="cirlce">
-                <circle id="path14386" fill="#000000" fill-rule="nonzero" opacity="0.25" cx="11.5" cy="11.5" r="4.5"></circle>
-                <circle id="circle14388" fill="#FFFFFF" fill-rule="nonzero" cx="11.5" cy="11.5" r="3.5"></circle>
-            </g>
-            <g id="ignore">
-                <path d="M1,60 L1,60" id="Line" stroke-linecap="square" fill="none"></path>
+            <g id="cirlce" transform="translate(7.000000, 7.000000)">
+                <circle id="path14386" fill="#000000" opacity="0.25" cx="4.5" cy="4.5" r="4.5"></circle>
+                <circle id="circle14388" fill="#FFFFFF" cx="4.5" cy="4.5" r="3.5"></circle>
             </g>
         </g>
     </g>

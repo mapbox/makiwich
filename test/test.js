@@ -2,10 +2,14 @@ var tape = require('tape');
 var makiwich = require('../');
 var maki = require('maki');
 var util = require('./util');
+var fs = require('fs');
+var path = require('path');
 
 // Don't tolerate any difference in text fixtures compared to images rendered during tests
 var maxDifference = 0;
 var abc = 'abcdefghijklmnopqrstuvwxyz';
+var actual = path.join(__dirname, 'fixtures', 'actual');
+if (!fs.existsSync(actual)) fs.mkdirSync(actual);
 
 maki.layouts.all.all.forEach((name) => {
     var key = `${name}-s-2x.png`;

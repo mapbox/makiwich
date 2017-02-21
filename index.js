@@ -16,20 +16,22 @@ function generateMarker (options, callback) {
 
     // Create clone from original
     var backgroundMarkerSize = JSON.parse(JSON.stringify(b));
+    var basePaths = backgroundMarkerSize.svg.g[0].g[0].g;
 
     if (options.symbol) {
         var symbolSize = `${options.symbol}-${size === 's' ? '11' : '15'}`;
         if (!assets.parsedSVGs[symbolSize] && !/^[1-9a-z]\d{0,1}$/.test(options.symbol)) return callback(errcode(`Symbol ${options.symbol} not valid`, 'EINVALID'));
 
         // Add the symbol to the base marker
-        backgroundMarkerSize.svg.g[0].g[1].g[0] = assets.parsedSVGs[symbolSize].svg;
+        basePaths[3].path = assets.parsedSVGs[symbolSize].svg.path;
+        delete basePaths[4];
 
         // If there is only 1 character, shift it to the center
         if (options.symbol.length === 1) {
             if (size === 's') {
-                backgroundMarkerSize.svg.g[0].g[1].$.transform = 'translate(9, 6)';
+                basePaths[3].$.transform = 'translate(9, 7)';
             } else {
-                backgroundMarkerSize.svg.g[0].g[1].$.transform = 'translate(10, 5)';
+                basePaths[3].$.transform = 'translate(10, 8)';
             }
         }
     }
@@ -40,19 +42,19 @@ function generateMarker (options, callback) {
     if (!tinyTint.isValid()) return callback(errcode('Invalid color', 'EINVALID'));
     var tintIsLightInColor = tinyTint.isLight();
 
-    var markerPaths = backgroundMarkerSize.svg.g[0].g[0].path;
     // Change the tint on the marker background
-    markerPaths[markerPaths.length - 2].$.fill = tinyTint.toHexString();
+    console.log(tint);
+    basePaths[1].$.fill = tinyTint.toHexString();
 
     // Swap the border color if the tint is light and there is a symbol
-    markerPaths[markerPaths.length - 1].$.fill = tinycolor.mostReadable(tint, allColors).toHexString();
+    basePaths[2].$.fill = tinycolor.mostReadable(tint, allColors).toHexString();
 
     // Some Maki icons have different SVG makeups. This attempts to apply the tint to the correct path
-    if (backgroundMarkerSize.svg.g[0].g[1].g[0].path) {
+    if (basePaths[3].path) {
         // If the background color is light, apply a light tint to the icon or text to make it stand out more
-        backgroundMarkerSize.svg.g[0].g[1].g[0].path[0].$.style = tintIsLightInColor ? `fill:${constants.DEFAULT_BLACK}` : `fill:${constants.DEFAULT_WHITE}`;
+        basePaths[3].path[0].$.style = tintIsLightInColor ? `fill:${constants.DEFAULT_BLACK}` : `fill:${constants.DEFAULT_WHITE}`;
     } else {
-        backgroundMarkerSize.svg.g[0].g[1].g[0].$.fill = tintIsLightInColor ? constants.DEFAULT_BLACK : constants.DEFAULT_WHITE;
+        basePaths[3].$.fill = tintIsLightInColor ? constants.DEFAULT_BLACK : constants.DEFAULT_WHITE;
     }
 
     var xml = builder.buildObject(backgroundMarkerSize);

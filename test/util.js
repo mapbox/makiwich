@@ -1,16 +1,18 @@
 var pixelmatch = require('pixelmatch');
 var mapnik = require('mapnik');
 var path = require('path');
+var fs = require('fs');
 
 module.exports.writeToDisk = function (key, svg) {
     if (process.env.UPDATE === 'true') {
         var s = new mapnik.Image.fromSVGBytesSync(new Buffer(svg), { scale: 2 });
         s.premultiplySync();
-        s.saveSync(path.join(__dirname, 'fixtures', 'expected', key));
+        fs.writeFileSync(path.join(__dirname, 'fixtures', 'expected', key), s.encodeSync('png'), {encoding: 'binary'});
     } else {
         var p = new mapnik.Image.fromSVGBytesSync(new Buffer(svg), { scale: 2 });
         p.premultiplySync();
         p.saveSync(path.join(__dirname, 'fixtures', 'actual', key));
+        fs.writeFileSync(path.join(__dirname, 'fixtures', 'actual', key), p.encodeSync('png'), {encoding: 'binary'});
     }
 }
 

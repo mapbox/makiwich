@@ -11,7 +11,6 @@ module.exports.writeToDisk = function (key, svg) {
     } else {
         var p = new mapnik.Image.fromSVGBytesSync(new Buffer(svg), { scale: 2 });
         p.premultiplySync();
-        p.saveSync(path.join(__dirname, 'fixtures', 'actual', key));
         fs.writeFileSync(path.join(__dirname, 'fixtures', 'actual', key), p.encodeSync('png'), {encoding: 'binary'});
     }
 }

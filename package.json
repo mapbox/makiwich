@@ -9,9 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@mapbox/maki": "^4.0.0",
     "d3-queue": "^3.0.3",
     "err-code": "^1.1.1",
-    "maki": "2.1.0",
     "text-to-svg": "^3.1.0",
     "tinycolor2": "^1.4.1",
     "xml2js": "^0.4.17"

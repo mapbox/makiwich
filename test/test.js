@@ -1,6 +1,6 @@
 var tape = require('tape');
 var makiwich = require('../');
-var maki = require('maki');
+var maki = require('@mapbox/maki');
 var util = require('./util');
 var fs = require('fs');
 var path = require('path');

@@ -9,13 +9,13 @@ Composites [Maki](https://mapbox.com/maki) icons with a map marker and returns a
 ## Install
 
 ```
-npm install makiwich --save
+npm install @mapbox/makiwich --save
 ```
 
 ## Usage
 
 ```js
-var makiwich = require('makiwich');
+var makiwich = require('@mapbox/makiwich');
 var mapnik = require('mapnik');
 
 makiwich.generateMarker({

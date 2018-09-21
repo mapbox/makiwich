@@ -10,7 +10,7 @@ for (var i in tinycolor.names) {
 }
 
 function generateMarker (options, callback) {
-    if (options.size && (options.size !== 's' && options.size !== 'l')) return callback(errcode('Invlaid size', 'EINVALID'));
+    if (options.size && (options.size !== 's' && options.size !== 'l')) return callback(errcode('Invalid size', 'EINVALID'));
     var size = options.size ? options.size : 'l';
     var b = size === 's' ? assets.smallParsedMarker : assets.largeParsedMarker;
 

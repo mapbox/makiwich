@@ -125,7 +125,7 @@ tape('invalid size', (t) => {
     makiwich({
         size: 'foo'
     }, (err, svg) => {
-        t.equal(err.message, 'Invlaid size');
+        t.equal(err.message, 'Invalid size');
         t.equal(svg, undefined);
         t.end();
     });

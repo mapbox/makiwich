@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@mapbox/maki": "^4.0.0",
+    "@mapbox/maki": "^6.2.0",
     "d3-queue": "^3.0.3",
     "err-code": "^1.1.1",
     "text-to-svg": "^3.1.0",
@@ -21,7 +21,7 @@
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.2",
     "eslint-plugin-standard": "^2.0.1",
-    "mapnik": "^3.5.14",
+    "mapnik": "^4.4.0",
     "pixelmatch": "^4.0.0",
     "tape": "^4.6.3"
   }

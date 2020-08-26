@@ -40,7 +40,11 @@ function generateMarker (options, callback) {
     var tinyTint = tinycolor(tint);
 
     if (!tinyTint.isValid()) return callback(errcode('Invalid color', 'EINVALID'));
-    var tintIsLightInColor = tinyTint.isLight();
+    // get the brightness value 
+    // create a variable that defines brightness threshhold 
+    // check to see if the brightness value is less than the threshhold 
+    // if is it more than threshhold of 160, set tintisLightiCcolor to true. 
+    var tintIsLightInColor = (tinyTint.getBrightness() > 160)
 
     // Change the tint on the marker background
     basePaths[1].$.fill = tinyTint.toHexString();

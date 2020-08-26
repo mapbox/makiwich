@@ -160,3 +160,4 @@ tape('invalid tint', (t) => {
         t.end();
     });
 });
+

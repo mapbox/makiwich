@@ -110,6 +110,24 @@ tape('test numbers small', (t) => {
     t.end();
 });
 
+tape('test numbers small orange', (t) => {
+    for (var i = 0; i < 99; i++) {
+        var key = `${i}-f58220-s2x.png`;
+        makiwich({
+            symbol: i + '',
+            tint: 'f58220',
+            size: 's'
+        }, (err, svg) => {
+            t.ifError(err);
+            util.writeToDisk(key, svg);
+            var difference = util.compare(key);
+            t.ok(difference <= maxDifference, `Pixel difference for ${key} is: ${difference}`);
+        });
+    }
+    t.end();
+});
+
+
 tape('default marker', (t) => {
     var key = 'default2x.png';
     makiwich({}, (err, svg) => {

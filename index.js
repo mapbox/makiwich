@@ -37,10 +37,15 @@ function generateMarker (options, callback) {
     }
 
     var tint = options.tint ? options.tint : constants.DEFAULT_BLACK;
+    // test the generate marker function with tint = f58220
+    // tintIsLightInColor should be false 
     var tinyTint = tinycolor(tint);
 
     if (!tinyTint.isValid()) return callback(errcode('Invalid color', 'EINVALID'));
-    var tintIsLightInColor = tinyTint.isLight();
+    
+    // if the brightness it more than 160, set tintisLightiCcolor to true. This way broader spectrum of 
+    // colors would have white fill. 
+    var tintIsLightInColor = (tinyTint.getBrightness() > 160); 
 
     // Change the tint on the marker background
     basePaths[1].$.fill = tinyTint.toHexString();

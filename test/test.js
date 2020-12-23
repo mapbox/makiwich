@@ -169,6 +169,26 @@ tape('invalid symbol', (t) => {
     });
 });
 
+tape('invalid symbol with a number and a letter', (t) => {
+    makiwich({
+        symbol: 'a1'
+    }, (err, svg) => {
+        t.equal(err.message, 'Symbol a1 not valid');
+        t.equal(svg, undefined);
+        t.end();
+    });
+});
+
+tape('invalid symbol with uppercase letter', (t) => {
+    makiwich({
+        symbol: 'A'
+    }, (err, svg) => {
+        t.equal(err.message, 'Symbol A not valid');
+        t.equal(svg, undefined);
+        t.end();
+    });
+});
+
 tape('invalid tint', (t) => {
     makiwich({
         tint: '/'

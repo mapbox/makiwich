@@ -20,7 +20,7 @@ function generateMarker (options, callback) {
 
     if (options.symbol) {
         var symbolSize = `${options.symbol}-${size === 's' ? '11' : '15'}`;
-        if (!assets.parsedSVGs[symbolSize] && !/^[1-9a-z]\d{0,1}$/.test(options.symbol)) return callback(errcode(`Symbol ${options.symbol} not valid`, 'EINVALID'));
+        if (!assets.parsedSVGs[symbolSize]) return callback(errcode(`Symbol ${options.symbol} not valid`, 'EINVALID'));
 
         // Add the symbol to the base marker
         basePaths[3].path = assets.parsedSVGs[symbolSize].svg.path;

@@ -2,7 +2,7 @@
 
 Composites [Maki](https://mapbox.com/maki) icons with a map marker and returns an SVG.
 
-[![](https://api.travis-ci.com/mapbox/makiwich.svg?branch=master)](https://travis-ci.com/mapbox/makiwich)
+[![](https://api.travis-ci.com/mapbox/makiwich.svg?branch=main)](https://travis-ci.com/mapbox/makiwich)
 
 <img src='https://cldup.com/Kx4BlRdfDs.png' height='34px' />
 

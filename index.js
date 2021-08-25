@@ -19,11 +19,10 @@ function generateMarker (options, callback) {
     var basePaths = backgroundMarkerSize.svg.g[0].g[0].g;
 
     if (options.symbol) {
-        var symbolSize = `${options.symbol}-${size === 's' ? '11' : '15'}`;
-        if (!assets.parsedSVGs[symbolSize]) return callback(errcode(`Symbol ${options.symbol} not valid`, 'EINVALID'));
+        if (!assets.parsedSVGs[options.symbol]) return callback(errcode(`Symbol ${options.symbol} not valid`, 'EINVALID'));
 
         // Add the symbol to the base marker
-        basePaths[3].path = assets.parsedSVGs[symbolSize].svg.path;
+        basePaths[3].path = assets.parsedSVGs[options.symbol].svg.path;
         delete basePaths[4];
 
         // If there is only 1 character, shift it to the center

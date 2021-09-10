@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@mapbox/maki": "^6.2.0",
+    "@mapbox/maki": "^7.0.0",
     "d3-queue": "^3.0.3",
     "err-code": "^1.1.1",
     "text-to-svg": "^3.1.0",

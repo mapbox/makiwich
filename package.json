@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/makiwich",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Sandwich together Maki icons with a map marker",
   "main": "index.js",
   "scripts": {

@@ -5,6 +5,7 @@ var constants = require('./lib/constants');
 var assets = require('./lib/loadAssets');
 var errcode = require('err-code');
 var allColors = [];
+var numericSizes = {'s': 11, 'l': 15};
 for (var i in tinycolor.names) {
     allColors.push(i);
 }
@@ -19,11 +20,24 @@ function generateMarker (options, callback) {
     var basePaths = backgroundMarkerSize.svg.g[0].g[0].g;
 
     if (options.symbol) {
-        var symbolSize = `${options.symbol}-${size === 's' ? '11' : '15'}`;
-        if (!assets.parsedSVGs[symbolSize]) return callback(errcode(`Symbol ${options.symbol} not valid`, 'EINVALID'));
+        const isMaki = (symb) => symb.length > 2;
+
+        const symbolName = (isMaki(options.symbol))
+            ? options.symbol
+            : `${options.symbol}-${numericSizes[size]}`;
+
+        if (!assets.parsedSVGs[symbolName]) {
+            return callback(errcode(`Symbol ${options.symbol} not valid`, 'EINVALID'));
+        }
+
+        // because maki@7.0.0 removed small SVGs, we need to update our small-marker SVG
+        // to reduce the size of the maki icon it renders by the appropriate ratio
+        if (isMaki(options.symbol) && size === 's') {
+            basePaths[3]['$'].transform += ' scale(0.733, 0.733)';
+        }
 
         // Add the symbol to the base marker
-        basePaths[3].path = assets.parsedSVGs[symbolSize].svg.path;
+        basePaths[3].path = assets.parsedSVGs[symbolName].svg.path;
         delete basePaths[4];
 
         // If there is only 1 character, shift it to the center

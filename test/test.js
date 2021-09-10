@@ -11,7 +11,7 @@ var abc = 'abcdefghijklmnopqrstuvwxyz';
 var actual = path.join(__dirname, 'fixtures', 'actual');
 if (!fs.existsSync(actual)) fs.mkdirSync(actual);
 
-maki.layouts.all.all.forEach((name) => {
+maki.layouts.forEach((name) => {
     var key = `${name}-s-2x.png`;
     tape(key, (t) => {
         makiwich({
@@ -27,7 +27,7 @@ maki.layouts.all.all.forEach((name) => {
     });
 });
 
-maki.layouts.all.all.forEach((name) => {
+maki.layouts.forEach((name) => {
     var key = `${name}-l-2x-454545.png`;
     tape(key, (t) => {
         makiwich({

@@ -4,7 +4,7 @@ Composites [Maki](https://mapbox.com/maki) icons with a map marker and returns a
 
 [![](https://api.travis-ci.com/mapbox/makiwich.svg?branch=main)](https://travis-ci.com/mapbox/makiwich)
 
-<img src='https://cldup.com/Kx4BlRdfDs.png' height='34px' />
+<img src='./test/fixtures/expected/restaurant-bbq-s-2x.png' />
 
 ## Install
 

@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/makiwich",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Sandwich together Maki icons with a map marker",
   "main": "index.js",
   "scripts": {
@@ -14,10 +14,10 @@
     "err-code": "^1.1.1",
     "text-to-svg": "^3.1.0",
     "tinycolor2": "^1.4.1",
-    "xml2js": "^0.4.17"
+    "xml2js": "^0.5.0"
   },
   "devDependencies": {
-    "eslint": "^3.15.0",
+    "eslint": "^8.44.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.2",
     "eslint-plugin-standard": "^2.0.1",

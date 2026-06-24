@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/makiwich",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Sandwich together Maki icons with a map marker",
   "main": "index.js",
   "scripts": {
@@ -24,5 +24,8 @@
     "mapnik": "^4.5.0",
     "pixelmatch": "^4.0.0",
     "tape": "^4.6.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
